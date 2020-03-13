@@ -1,0 +1,25 @@
+printWidth: 180
+semi: false
+singleQuote: true
+bracketSpacing: true
+jsxBracketSameLine: true
+arrowParens: 'avoid'
+parser: typescript
+
+overrides:
+  # scss.d.ts files are generated automatically with semicolons.
+  # However we might need to modify them manually.
+  # In order to mantain consistency, we allow semicolons.
+  - files: '*.scss.d.ts'
+    options:
+      semi: true
+  - files: '*.scss'
+    options:
+      parser: 'scss'
+      singleQuote: false
+  - files: '*.json'
+    options:
+      parser: 'json'
+  - files: '{.*,*}.yaml'
+    options:
+      parser: 'yaml'

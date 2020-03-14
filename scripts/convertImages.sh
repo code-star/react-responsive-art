@@ -21,7 +21,7 @@ for file in images/$inputImage; do
 
     # Clear file
     > $importsFileName
-    mkdir $imageName
+    mkdir output/$imageName
 
     echo -e "<ResponsiveImage alt='${imageName}'\nsizes='100vw'\nsrcSet={{" > $imagesFileName
 
@@ -41,7 +41,7 @@ for file in images/$inputImage; do
         echo -e "  ${size}: ${imageName}_${ext}_${size}," >> $imagesFileName
 
         qualityCommand=$([ "$ext" == "jp2" ] && echo "-define jp2:rate=32" || echo "-quality 90")
-        convertCommand="${convertCommand} ( -clone 0 -resize ${size} ${qualityCommand} -set filename:width %t_%w -write $imageName/%[filename:width].${ext} +delete ) "
+        convertCommand="${convertCommand} ( -clone 0 -resize ${size} ${qualityCommand} -set filename:width %t_%w -write output/$imageName/%[filename:width].${ext} +delete ) "
       done
       convertCommand="${convertCommand} null:"
 
@@ -54,7 +54,7 @@ for file in images/$inputImage; do
       echo "" >> $importsFileName
     done
     echo -e "}}\n/>\n</>\n" >> $imagesFileName
-    cat $importsFileName templates/component.tsx $imagesFileName > $imageName/$imageName.tsx
+    cat $importsFileName templates/component.tsx $imagesFileName > output/$imageName/$imageName.tsx
   fi
   echo ""
 done

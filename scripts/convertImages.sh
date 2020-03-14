@@ -23,7 +23,7 @@ for file in images/$inputImage; do
     > $importsFileName
     mkdir output/$imageName
 
-    echo -e "<ResponsiveImage alt='${imageName}'\nsizes='100vw'\nsrcSet={{" > $imagesFileName
+    echo -e "alt='${imageName}'\nsizes='100vw'\nsrcSet={{" > $imagesFileName
 
     for ext in "${extensions[@]}"
     do

@@ -3,7 +3,7 @@ import { ResponsiveImageSrcSet, ImageType } from './ResponsiveImageSrcSet';
 import { getBiggestImageInSrcSet } from './getBiggestImageInSrcSet';
 import { getSrcSet } from './getSrcSet';
 
-type ResponsiveImageProps<T extends number> = Readonly<{
+export type ResponsiveImageProps<T extends number> = Readonly<{
   alt: string;
   sizes: string;
   srcSet: ResponsiveImageSrcSet<T>;

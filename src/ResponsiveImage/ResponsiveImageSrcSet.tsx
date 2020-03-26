@@ -16,6 +16,7 @@ export type EfficientImageSize =
   | 1680
   | 1920;
 
+// TODO add format generic type
 export type ResponsiveImageSrcSet<
   ImageSize extends number = EfficientImageSize
 > = Record<ImageType, Record<ImageSize, string>>;

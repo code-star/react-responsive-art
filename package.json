@@ -34,7 +34,7 @@
   "module": "dist/react-responsive-art.esm.js",
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-actions": "^6.2.7",
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
